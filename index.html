@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="gMapp">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Google Map Directive</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<div ng-controller="Controller">
+  
+  <div class="wrapper">
+    
+    <div class="page-header">
+      <h1>Google Map Directive Angularjs</h1>
+      
+      <br>
+      <a class="github-button" href="https://github.com/boompx/google-map-directive/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download boompx/google-map-directive on GitHub">Download</a>
+      <a class="github-button" href="https://github.com/boompx/google-map-directive/fork" data-icon="octicon-repo-forked" data-count-href="/boompx/google-map-directive/network" data-count-api="/repos/boompx/google-map-directive#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork boompx/google-map-directive on GitHub">Fork</a>
+      <a class="github-button" href="https://github.com/boompx/google-map-directive" data-icon="octicon-star" data-count-href="/boompx/google-map-directive/stargazers" data-count-api="/repos/boompx/google-map-directive#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star boompx/google-map-directive on GitHub">Star</a>
+      <a class="github-button" href="https://github.com/boompx" aria-label="Follow @boompx on GitHub">Follow @boompx</a>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="boom_px" data-hashtags="angulardirective">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    </div>
+
+    
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Enter Zip Code" ng-model="inputZip">
+      <span class="input-group-btn">
+        <button class="btn btn-default" ng-click="setZip()" type="button">Go!</button>
+      </span>
+    </div>
+
+    <h2>Usage</h2>
+    <hr>
+    
+    <h3>Required files</h3>
+    <pre>&lt;script src="https://maps.googleapis.com/maps/api/js"&gt;&lt;/script&gt;
+&lt;script src="path-to/1.4.*/angular.js"&gt;&lt;/script&gt;
+&lt;script src="path-to/your-app.js"&gt;&lt;/script&gt;</pre>
+
+    <h3>Directive types</h3>
+    <pre>&lt;!-- 'E'lement --&gt;
+&lt;google-map&gt;&lt;/google-map&gt;
+
+&lt;!-- 'A'ttribute --&gt;
+&lt;div google-map&gt;&lt;/div&gt;</pre>
+
+    
+    <h3>Scope Options</h3>
+    <ul>
+      <li><code>zipcode</code> type <code>'string'</code></li>
+      <li><code>hasSkin</code> type <code>'undefined'</code> <span class="text-muted">(optional)</span></li>
+    </ul>
+    <pre>&lt;google-map class="gmap" id="gmap" zipcode="Object.ZipCode" has-skin&gt;&lt;/google-map&gt;</pre>
+    <p>
+      <code class="small">id</code> attribute is required! also you need to set the height and width via <code class="small">class="your-class"</code> or inline.
+    </p>
+
+  
+    <h3>Credits</h3>
+    <ul>
+      <li>Map Style: <a href="https://snazzymaps.com/style/32070/vallgatan">Vallgatan</a> made by @joel</a></li>
+      <li>Bootstrap theme (demo): <a href="http://bootswatch.com/flatly/">Flatly</a> made by <a href="http://thomaspark.co/">Thomas Park</a></li>
+    </ul>
+    
+    <h3>Links</h3>
+    <ul>
+      <li>Browse more map styles at <a href="https://snazzymaps.com/">snazzymaps.com</a></li>
+    </ul>
+    
+    
+  </div>
+  
+  <google-map zipcode="{{defaultZip}}" id="gmap" class="gmap" has-skin></google-map>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+<script src="app.js"></script>
+</html>
